@@ -1,0 +1,9 @@
+.invites{ 'ng-controller' => 'InviteCtrl', 'ng-init' => 'initialize()' }
+  .invite
+    Invites here:
+    .msg{ 'ng-repeat' => 'invite in invites' } {{invite.content}}
+  .send
+    %button{ 'ng-click' => 'sendInvite()' } Send invite
+    %input{ 'ng-model' => 'content', :placeholder => "Enter in the invite message" }
+    .loading{ 'ng-show' => 'loading' }= image_tag 'spinner.gif'
+
